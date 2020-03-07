@@ -31,6 +31,7 @@ header {
     flex-grow: 1;
     line-height: 350px;
     min-height: 350px;
+    /* height: 350px; */
     width: 100%; /* mobile-first: they will wrap ! */
 }
 
@@ -68,9 +69,15 @@ header {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .container > div {
-        width: 33%; /* mobile-first: overwrites the width:100% when > 768px --> does not wrap anymore ! */
+        width: 33%; /* mobile-first: overwrites the width:100% when window width > 768px --> divs will not wrap anymore ! */
+        height: 350px;
+        line-height: 350px;
+    }
+    .container > div:first-child {
+        /* consider some room for the ul in the first div */
+        line-height: 182px;
     }
 }
 
