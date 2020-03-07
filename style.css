@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    color: #ffffff;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    background-color: #ab05f2;
+    padding: 40px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* flex-box */
+.container {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+/* flex-items */
+.container div {
+    flex-grow: 1;
+    line-height: 350px;
+    min-height: 350px;
+    width: 100%; /* mobile-first: they will wrap ! */
+}
+
+.nav > ul > li {
+    line-height: 1em;
+    text-align: left;
+}
+
+.nav {
+    background-color: #7d07f2;
+}
+
+.funny_2 {
+    background-color: #d7f205;
+}
+
+.funny_3 {
+    background-color: #23d9b7;
+}
+
+@media (max-width: 768px) {
+    div.nav.open_left {
+        left: 0; /* whenever this class is present, this assignment wins over the assignment of the same property in the next selector, since it has a more specific selector */
+    }
+    div.nav {
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        padding: 5em 0 0 0;
+        left: -50%;
+        -webkit-transition: left 500ms;
+        -moz-transition: left 500ms;
+        -o-transition: left 500ms;
+        transition: left 500ms; /* transition the property 'left' with a transition duration of 500ms */
+    }
+}
+
+@media (min-width: 768px) {
+    .container > div {
+        width: 33%; /* mobile-first: overwrites the width:100% when > 768px --> does not wrap anymore ! */
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper {
+        width: 992px;
+    }
+}
